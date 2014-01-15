@@ -1,9 +1,11 @@
 require 'bcrypt'
 require 'pry'
+require_relative 'user_module'
 
 class UserError < StandardError; end
-
+module GA
 class User
+  include Logger
 
   PWD_FILENAME = "#{File.dirname(__FILE__)}/../passwd"
 
@@ -48,4 +50,5 @@ class User
       email_address == entry.split(':')[0]
     end
   end
+end
 end

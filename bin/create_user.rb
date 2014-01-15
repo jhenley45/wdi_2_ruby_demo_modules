@@ -2,9 +2,10 @@ require_relative '../lib/user'
 
 
 def create_user(email, password, password_confirmation)
-  user = User.new(email, password, password_confirmation)
+  user = GA::User.new(email, password, password_confirmation)
   user.encrypt_password
   user.save!
+  user.saved
 end
 
 def prompt_user
@@ -38,3 +39,4 @@ if ARGV.length == 3
 else
   prompt_user
 end
+

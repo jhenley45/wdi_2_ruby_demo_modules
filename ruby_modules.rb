@@ -36,7 +36,8 @@ class BunchOfIntegers
 
     def each(&block)
         @num_array.each do |member|
-            block.call(member)
+            yield(member)
+            #block.call(member)
         end
     end
 

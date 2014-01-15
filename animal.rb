@@ -1,8 +1,9 @@
 # Inheritance
-#require_relative 'climbing'
+require_relative 'climbing'
 
 # Define an parent Animal class
 class Animal
+  include Talking
   def move
     puts "i can move!"
   end
@@ -20,7 +21,7 @@ end
 
 # Define a Monkey class that inherits from Mammal
 class Monkey < Mammal
-#  include Climbing
+  include Climbing
 
   def swing
     puts "i can swing!"
@@ -46,7 +47,7 @@ timmy.eat
 timmy.swing
 timmy.speak
 
-# timmy.climb
+timmy.climb
 
 # Instantiate a Dog and show off what it can do
 puts "\nI'm a Dog and I can:"
@@ -54,3 +55,4 @@ sammy = Dog.new
 sammy.move
 sammy.eat
 sammy.speak
+sammy.talk
